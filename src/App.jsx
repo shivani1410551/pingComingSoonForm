@@ -15,7 +15,7 @@ function App() {
   });
   return (
     <main>
-      <img src="../public/assets/images/logo.svg" className="ping-logo" />
+      <img src="images/logo.svg" className="ping-logo" />
       <div className="description">
         <h1>
           {" "}
@@ -36,10 +36,7 @@ function App() {
         </form>
       </div>
 
-      <img
-        src="../public/assets/images/illustration-dashboard.png"
-        className="dashboard"
-      />
+      <img src="images/illustration-dashboard.png" className="dashboard" />
       <div className="footer">
         <div className="socials">
           <i class="fa-brands fa-facebook"></i>
