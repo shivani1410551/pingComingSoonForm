@@ -1,0 +1,204 @@
+@import "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$font-family: "Libre Franklin", sans-serif;
+$Blue: hsl(223deg 87% 63%);
+$PaleBlue: hsl(223deg 100% 88%);
+$LightRed: hsl(354deg 100% 66%);
+$Gray: hsl(0deg 0% 59%);
+$VeryDarkBlue: hsl(209deg 33% 12%);
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-size: 20px;
+  font-family: $font-family;
+
+  main {
+    height: 100vh;
+    margin-block: 2rem;
+    display: grid;
+    grid-template-columns: minmax(auto, 500px);
+    justify-content: center;
+    grid-row-gap: 5px;
+
+    .ping-logo {
+      height: 20px;
+      margin: auto;
+    }
+
+    .dashboard {
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .description {
+      margin: 0 auto;
+      flex-direction: column;
+
+      @include center;
+
+      gap: 12px;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        color: $Gray;
+
+        span {
+          font-weight: 700;
+          color: $VeryDarkBlue;
+        }
+      }
+
+      p {
+        color: $VeryDarkBlue;
+        font-weight: 300;
+        font-size: 0.85rem;
+      }
+
+      form {
+        display: flex;
+        margin-block: 1rem;
+        gap: 15px;
+        position: relative;
+        .error {
+          color: $LightRed;
+          font-size: 12px;
+          position: absolute;
+          bottom: -18px;
+          left: 15px;
+        }
+        #email {
+          border: 0.5px solid $Gray;
+          text-indent: 5px;
+          border-radius: 30px;
+          padding: 0.5rem 1rem;
+          width: 300px;
+
+          &::placeholder {
+            font-size: 12px;
+            color: $Gray;
+            opacity: 0.4;
+          }
+        }
+
+        button {
+          padding: 0.5rem 1rem;
+          background-color: $Blue;
+          color: #fff;
+          border: none;
+          outline: none;
+          border-radius: 30px;
+          width: 150px;
+          font-size: 14px;
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    .footer {
+      margin: 0 auto;
+
+      .socials {
+        color: $Blue;
+        margin-bottom: 20px;
+
+        @include center;
+
+        font-size: 18px;
+
+        i {
+          margin-inline: 15px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: $Gray;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    display: grid;
+
+    main {
+      margin-block: 0;
+
+      .ping-logo {
+        height: 10px;
+      }
+
+      .dashboard {
+        height: 200px;
+        margin: auto;
+      }
+
+      .description {
+        flex-direction: column;
+        gap: 5px;
+
+        h1 {
+          font-size: 0.6rem;
+        }
+
+        p {
+          font-size: 0.3rem;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          margin-block: 10px;
+          gap: 15px;
+
+          #email {
+            width: 140px;
+            padding: 5px 8px;
+            font-size: 8px;
+
+            &::placeholder {
+              font-size: 7px;
+            }
+          }
+
+          button {
+            padding: 5px 8px;
+            font-size: 8px;
+            width: 140px;
+          }
+        }
+      }
+
+      .footer {
+        .socials {
+          margin-bottom: 10px;
+          font-size: 10px;
+
+          i {
+            margin-inline: 8px;
+          }
+        }
+
+        p {
+          font-size: 6px;
+        }
+      }
+    }
+  }
+}
